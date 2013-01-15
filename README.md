@@ -1,14 +1,10 @@
-Jira-links
-==========
+Bugzilla-links
+==============
 
-DokuWiki plugin to automatically link to Jira issues.
+DokuWiki plugin to automatically link to Bugzilla issues.
 
 All documentation for this plugin can be found at
-http://www.dokuwiki.org/plugin:jiralinks.
-
-If you install this plugin manually, make sure it is installed in
-`lib/plugins/jiralinks/` - if the folder is called different it
-will not work!
+http://www.dokuwiki.org/plugin:bugzillalinks.
 
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
@@ -16,11 +12,12 @@ on how to install plugins in DokuWiki.
 Icon `bug1.gif` created by Neal Applebaum and found on the official Jira wiki at
 https://confluence.atlassian.com/display/JIRACOM/Extra+Jira+Icons.
 
-This plugin is inspired by the original Jira plugin by Robert Lopuszanski at
-https://www.dokuwiki.org/plugin:jira.
+This plugin is heavily based on JiraLinks plugin by Christian Studer at
+https://www.dokuwiki.org/plugin:jiralinks.
 
 
 ----
+Copyright (C) 2012 Antonin Kral <a.kral@bobek.cz>
 Copyright (C) 2012 christian studer <christian.studer@meteotest.ch>
 
 This program is free software; you can redistribute it and/or modify

@@ -1,7 +1,7 @@
-base	jiralinks
-author	christian studer
-email	christian.studer@meteotest.ch
-date	2012-11-20
-name	Jira-links
-desc	Automatically create links to Jira issues
-url		http://www.dokuwiki.org/plugin:jiralinks
+base	bugzillalinks
+author	Antonin Kral
+email	a.kral@bobek.cz
+date	2013-01-15
+name	Bugzilla-links
+desc	Automatically create links to Bugzilla issues
+url		http://www.dokuwiki.org/plugin:bugzillalinks

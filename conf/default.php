@@ -1,7 +1,7 @@
 <?php
 /**
- * Default configuration settings for the Jira-links plugin
- * 
+ * Default configuration settings for the Bugzilla-links plugin
+ *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-$conf['jiraserver'] = 'https://url-to-server/browse/';
+$conf['bugzillaserver'] = 'https://bugzilla-server/show_bug.cgi?id=';

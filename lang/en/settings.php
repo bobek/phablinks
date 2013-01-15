@@ -1,7 +1,7 @@
 <?php
 /**
- * English language strings for the configuration of Jira-links
- * 
+ * English language strings for the configuration of Bugzilla-links
+ *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-$lang['jiraserver'] = 'Jira issues browser URL';
+$lang['bugzillaserver'] = 'URL for Bugzilla bug detail page';

@@ -1,7 +1,8 @@
 <?php
 /**
- * Jira-links syntax plugin for DokuWiki
- * 
+ * Bugzilla-links syntax plugin for DokuWiki
+ *
+ * @author Antonin Kral <a.kral@bobek.cz>
  * @author christian studer <christian.studer@meteotest.ch>
  * @license GPL2 http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -13,14 +14,14 @@ if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once DOKU_PLUGIN.'syntax.php';
 
 /**
- * The Jira-links syntay plugin itself
- * 
+ * The Bugzilla-links syntay plugin itself
+ *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-class syntax_plugin_jiralinks extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_bugzillalinks extends DokuWiki_Syntax_Plugin {
 	/**
 	 * Gets plugin type
-	 * 
+	 *
 	 * @return string
 	 */
 	public function getType() {
@@ -29,27 +30,26 @@ class syntax_plugin_jiralinks extends DokuWiki_Syntax_Plugin {
 
 	/**
 	 * Gets plugin sort order
-	 *  
+	 *
 	 * @return number
 	 */
 	public function getSort() {
-		return 331; // Belongs to externallink somehow 
+		return 331; // Belongs to externallink somehow
 	}
 
 
 	/**
 	 * Plugin mode connection
-	 *  
+	 *
 	 * @param string $mode
 	 */
 	public function connectTo($mode) {
-		// Detect all KEYS-123
-		$this->Lexer->addSpecialPattern('[A-Z]+?-[0-9]+', $mode, 'plugin_jiralinks');
+		$this->Lexer->addSpecialPattern('[Bb]ug\s*\d+', $mode, 'plugin_bugzillalinks');
 	}
 
 	/**
 	 * Match handling
-	 * 
+	 *
 	 * @param string $match
 	 * @param string $state
 	 * @param int $pos
@@ -57,13 +57,15 @@ class syntax_plugin_jiralinks extends DokuWiki_Syntax_Plugin {
 	 * @return array
 	 */
 	public function handle($match, $state, $pos, &$handler){
-		// Return all matches
-		return array($match);
+        if ( preg_match('/^[Bb]ug\s*(\d+)$/', $match, $bugMatch) ) {
+	      return array($match, $bugMatch[1]);
+        }
+        return array($match);
 	}
 
 	/**
 	 * Render the output
-	 *  
+	 *
 	 * @param string $mode
 	 * @param Doku_Renderer $renderer
 	 * @param array $data
@@ -74,8 +76,8 @@ class syntax_plugin_jiralinks extends DokuWiki_Syntax_Plugin {
 		if($mode != 'xhtml') return false;
 
 		// Append the link to the issue
-		$renderer->doc .= '<a class="jiralink" href="' . $this->getConf('jiraserver') . $data[0] . '">' . $data[0] . '</a>';
-	
+		$renderer->doc .= '<a class="bugzillalink" href="' . $this->getConf('bugzillaserver') . $data[1] . '">' . $data[0] . '</a>';
+
 		return true;
 	}
 }

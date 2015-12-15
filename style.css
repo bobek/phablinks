@@ -4,7 +4,7 @@
  *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-div.dokuwiki a.phublink {
+div.dokuwiki a.phablink {
 	background-image: url(images/bug1.gif);
 	background-repeat: no-repeat;
 	background-position: 0 center;

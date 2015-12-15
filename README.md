@@ -8,9 +8,6 @@ Fully based on http://www.dokuwiki.org/plugin:bugzillalinks / https://github.com
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
 
-Icon `bug1.gif` created by Neal Applebaum and found on the official Jira wiki at
-https://confluence.atlassian.com/display/JIRACOM/Extra+Jira+Icons.
-
 This plugin is heavily based on JiraLinks plugin by Christian Studer at
 https://www.dokuwiki.org/plugin:jiralinks.
 

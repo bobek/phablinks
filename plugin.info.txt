@@ -1,7 +1,7 @@
-base	bugzillalinks
+base	phablinks
 author	Antonin Kral
 email	a.kral@bobek.cz
-date	2013-01-15
-name	Bugzilla-links
-desc	Automatically create links to Bugzilla issues
-url		http://www.dokuwiki.org/plugin:bugzillalinks
+date	2015-12-15
+name	Phab-links
+desc	Automatically create links to Phabricator issues
+url		http://www.dokuwiki.org/plugin:phablinks

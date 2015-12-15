@@ -1,6 +1,6 @@
 <?php
 /**
- * Bugzilla-links syntax plugin for DokuWiki
+ * Phab-links syntax plugin for DokuWiki
  *
  * @author Antonin Kral <a.kral@bobek.cz>
  * @author christian studer <christian.studer@meteotest.ch>
@@ -14,11 +14,11 @@ if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once DOKU_PLUGIN.'syntax.php';
 
 /**
- * The Bugzilla-links syntay plugin itself
+ * The Phab-links syntay plugin itself
  *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-class syntax_plugin_bugzillalinks extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_phablinks extends DokuWiki_Syntax_Plugin {
 	/**
 	 * Gets plugin type
 	 *
@@ -44,7 +44,7 @@ class syntax_plugin_bugzillalinks extends DokuWiki_Syntax_Plugin {
 	 * @param string $mode
 	 */
 	public function connectTo($mode) {
-		$this->Lexer->addSpecialPattern('[Bb]ug\s*\d+', $mode, 'plugin_bugzillalinks');
+		$this->Lexer->addSpecialPattern('T\d+', $mode, 'plugin_phablinks');
 	}
 
 	/**
@@ -57,7 +57,7 @@ class syntax_plugin_bugzillalinks extends DokuWiki_Syntax_Plugin {
 	 * @return array
 	 */
 	public function handle($match, $state, $pos, &$handler){
-        if ( preg_match('/^[Bb]ug\s*(\d+)$/', $match, $bugMatch) ) {
+        if ( preg_match('/^(T\d+)$/', $match, $bugMatch) ) {
 	      return array($match, $bugMatch[1]);
         }
         return array($match);
@@ -76,7 +76,7 @@ class syntax_plugin_bugzillalinks extends DokuWiki_Syntax_Plugin {
 		if($mode != 'xhtml') return false;
 
 		// Append the link to the issue
-		$renderer->doc .= '<a class="bugzillalink" href="' . $this->getConf('bugzillaserver') . $data[1] . '">' . $data[0] . '</a>';
+		$renderer->doc .= '<a class="phablink" href="' . $this->getConf('phabserver') . $data[1] . '">' . $data[0] . '</a>';
 
 		return true;
 	}

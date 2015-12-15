@@ -1,10 +1,10 @@
 @CHARSET "UTF-8";
 /**
- * CSS for the Bugzilla-links syntax plugin
+ * CSS for the Phab-links syntax plugin
  *
  * @author christian studer <christian.studer@meteotest.ch>
  */
-div.dokuwiki a.bugzillalink {
+div.dokuwiki a.phublink {
 	background-image: url(images/bug1.gif);
 	background-repeat: no-repeat;
 	background-position: 0 center;

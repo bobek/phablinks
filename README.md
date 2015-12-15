@@ -1,10 +1,9 @@
-Bugzilla-links
-==============
+Phab-links
+==========
 
-DokuWiki plugin to automatically link to Bugzilla issues.
+DokuWiki plugin to automatically link to Phabricator issues.
 
-All documentation for this plugin can be found at
-http://www.dokuwiki.org/plugin:bugzillalinks.
+Fully based on http://www.dokuwiki.org/plugin:bugzillalinks / https://github.com/bobek/bugzillalinks
 
 Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
